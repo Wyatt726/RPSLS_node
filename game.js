@@ -38,12 +38,12 @@ function howManyPlayers() {
 
     let enterPlayers = (prompt("Play Computer or Human? \nEnter Human or Computer"))
         if(enterPlayers = "human") {
-            user = player1
-            opponent = player2
+            user = player.player1
+            opponent = player.player2
         }
         else {
-            user = player1;
-            opponent = computer;
+            user = player.player1;
+            opponent = player.computer;
         }
 
         }
