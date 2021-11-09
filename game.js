@@ -1,5 +1,10 @@
 "use strict"
 
+const player = require("./player")();
+
+const prompt = require("prompt-sync")();
+
+
 // create rules 
 // display rules when program is started
 // prompt player (1 player / 2 player )
@@ -16,11 +21,40 @@
 
 
 
-
-
-function gameRoom() {
-    console.log("game is played out here");
+function displayRules() {
+    console.log("How many players? \n1 vs. 1 or 1 vs. Computer?"); 
+    console.log("Rules of the game."); 
+    console.log("Choose your gesture:  Rock, Paper, Scissor, Lizard, Spock"); 
+    console.log("Type gesture into field"); 
+    console.log("Best of 3 series.  Race to 2 wins!"); 
 }
+
+//create walkthru function of displayRules prompting user to enter above info?
+
+
+function howManyPlayers() {
+    let user; 
+    let opponent;
+
+    let enterPlayers = (prompt("Play Computer or Human? \nEnter Human or Computer"))
+        if(enterPlayers = "human") {
+            user = player1
+            opponent = player2
+        }
+        else {
+            user = player1;
+            opponent = computer;
+        }
+
+        }
+            
+
+
+        
+
+
+
 
 
 module.exports.gameRoom = gameRoom;
+module.exports.displayRules = displayRules;

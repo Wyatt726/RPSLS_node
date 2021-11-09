@@ -4,7 +4,11 @@
 
 const game =  require('./game');
 
-game.gameRoom();
+
+
+game.displayRules();
+
+
 
 // import example
 // const Player = require('./player');

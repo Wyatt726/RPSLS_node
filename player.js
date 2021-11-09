@@ -41,4 +41,4 @@ class Computer extends Player {
 
 
 // exports example
-// module.exports.player = player; 
+module.exports.Player = Player; 
