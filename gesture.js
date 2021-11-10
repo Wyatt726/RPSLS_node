@@ -1,9 +1,9 @@
-"use strict"
+// "use strict"
 
 
-rock > scissors;
-scissors > paper;
-paper > rock;
+// rock > scissors;
+// scissors > paper;
+// paper > rock;
 
 
 

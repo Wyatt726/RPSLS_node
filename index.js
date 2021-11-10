@@ -1,14 +1,5 @@
 "use strict"
+const {Game} = require("./game");
 
-
-
-const game =  require('./game');
-
-
-
-game.displayRules();
-
-
-
-// import example
-// const Player = require('./player');
+let rpsls = new Game("RPSLS");
+rpsls.runGame();

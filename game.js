@@ -1,9 +1,44 @@
 "use strict"
 
-const player = require("./player")();
-
+const {Human} = require('./human')
+const {AI} = require('./ai')
 const prompt = require("prompt-sync")();
 
+class Game {
+    constructor() {
+        this.playerOne = new Human();
+        this.playerTwo = null;
+    }
+
+    displayRules() {
+        console.log("How many players? \n1 vs. 1 or 1 vs. Computer?"); 
+        console.log("Rules of the game."); 
+        console.log("Choose your gesture:  Rock, Paper, Scissor, Lizard, Spock"); 
+        console.log("Type gesture into field"); 
+        console.log("Best of 3 series.  Race to 2 wins!"); 
+    }
+
+    howManyPlayers() {
+
+        let enterPlayers = (prompt("Play Computer or Human? Enter Human or Computer: ").toLowerCase());
+            if (enterPlayers == "human") {
+               this.playerTwo = new Human()
+                console.log("you selected 2 players");
+            }
+            else if (enterPlayers == "computer") {
+                this.playerTwo = new AI()
+                console.log("you selected 1 players");
+            }
+            else {
+                console.log("not a valid selection");
+                howManyPlayers; 
+            }
+        }
+    runGame(){
+        this.displayRules();
+        this.howManyPlayers();
+    }
+}
 
 // create rules 
 // display rules when program is started
@@ -21,32 +56,12 @@ const prompt = require("prompt-sync")();
 
 
 
-function displayRules() {
-    console.log("How many players? \n1 vs. 1 or 1 vs. Computer?"); 
-    console.log("Rules of the game."); 
-    console.log("Choose your gesture:  Rock, Paper, Scissor, Lizard, Spock"); 
-    console.log("Type gesture into field"); 
-    console.log("Best of 3 series.  Race to 2 wins!"); 
-}
+
 
 //create walkthru function of displayRules prompting user to enter above info?
 
 
-function howManyPlayers() {
-    let user; 
-    let opponent;
 
-    let enterPlayers = (prompt("Play Computer or Human? \nEnter Human or Computer"))
-        if(enterPlayers = "human") {
-            user = player.player1
-            opponent = player.player2
-        }
-        else {
-            user = player.player1;
-            opponent = player.computer;
-        }
-
-        }
             
 
 
@@ -56,5 +71,8 @@ function howManyPlayers() {
 
 
 
-module.exports.gameRoom = gameRoom;
-module.exports.displayRules = displayRules;
+// module.exports.gameRoom = gameRoom;
+// module.exports.displayRules = displayRules;
+module.exports = {
+    Game:Game
+}
