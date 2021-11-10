@@ -4,6 +4,7 @@
 // rock > scissors;
 // scissors > paper;
 // paper > rock;
+// lizard
 
 
 

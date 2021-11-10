@@ -38,24 +38,48 @@ class Game {
             }
         }
 
-    chooseGesture () { 
-        // create the funciton for a human to pick a getsture
-        let playerOneChoice;
-        let promptGesture = parseInt(prompt("Your turn, pick a gesture!: \nPress 1 for Rock.  \nPress 2 for Paper.  \nPress 3 for Scissors.  \nPress 4 for Lizard.  \nPress 5 for Spock. " ));
-            if (isNaN(promptGesture)) {
-                console.log("Not a number.  Enter relevant number");
-                chooseGesture();
-            }
-            else {
-                promptGesture == 1, 2, 3, 4, 5; 
-                playerOneChoice = promptGesture;
-            }
-            console.log(playerOneChoice + " test");
-            }
-
-    gameLogic ();
-            if (playerOneChoice == 1) {
+    // chooseGesture () { 
+    //     // create the funciton for a human to pick a getsture
+    //     let playerOneChoice;
+    //     this.playerTwo.pickGesture()
+    //     let computerChoice = this.playerTwo.gesture;
+    //     let promptGesture = parseInt(prompt("Your turn, pick a gesture!: \nPress 1 for Rock.  \nPress 2 for Paper.  \nPress 3 for Scissors.  \nPress 4 for Lizard.  \nPress 5 for Spock. " ));
+        
+    //         if (isNaN(promptGesture)) {
+    //             console.log("Not a number.  Enter relevant number");
+    //             chooseGesture();
+    //         }
+    //         else {
+    //             promptGesture == 1, 2, 3, 4, 5; 
+    //             playerOneChoice = promptGesture;
                 
+    //         }
+    //         console.log("You chose " + playerOneChoice);
+    //         console.log("Computer chose " + computerChoice);
+    //         }
+    playRound(){
+    this.playerOne.pickGesture()
+    this.playerTwo.pickGesture()
+    // console.log("TEST for player 1 " + this.playerOne.gesture)
+    if(this.playerOne.gesture === this.playerTwo.gesture){
+        console.log(this.playerOne.name + " has chose " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + " Its a tie, play again.")
+        this.playRound()
+    }
+    else if(this.playerOne.gesture == "Rock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Lizard")){
+        console.log(this.playerOne.name + " has chose " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + " Player one wins this round.")    
+        this.playerOne.points += 1
+        console.log(this.playerOne.points)
+    }
+    }
+        
+
+
+    gameLogic () {
+         let youWin;
+              if (playerOneChoice == 1 && AI.gestures == "") {
+                  // AI.gestures is showing value as undefined
+                  console.log("You Win");
+              }  
             }
             
 
@@ -63,7 +87,8 @@ class Game {
     runGame(){
         this.displayRules();
         this.howManyPlayers();
-        this.chooseGesture();
+        this.playRound();
+        this.gameLogic();
         
         
 

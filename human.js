@@ -10,20 +10,20 @@ class Human extends Player {
 
     }
 
-    // chooseGesture () { 
-    // // create the funciton for a human to pick a getsture
-    // let userGestureChoice;
-    // let promptGesture = parseInt(prompt("Your turn, pick a gesture!: \nPress 1 for Rock.  \nPress 2 for Paper.  \nPress 3 for Scissors.  \nPress 4 for Lizard.  \nPress 5 for Spock. " ));
-    //     if (isNaN(promptGesture)) {
-    //         console.log("Not a number.  Enter relevant number");
-    //         chooseGesture();
-    //     }
-    //     else {
-    //         promptGesture == 1, 2, 3, 4, 5; 
-    //         userGestureChoice = promptGesture;
-    //     }
-    //     console.log(userGestureChoice);
-    //     }
+    pickGesture () { 
+    // create the funciton for a human to pick a getsture
+    console.log("Your turn, pick a gesture!: \nPress 0 for Rock.  \nPress 1 for Paper.  \nPress 2 for Scissors.  \nPress 3 for Lizard.  \nPress 4 for Spock. ")
+    let promptGesture = parseInt(prompt());
+        if (isNaN(promptGesture)) {
+            console.log("Not a number.  Enter relevant number");
+            pickGesture();
+        }
+        else {
+            //promptGesture == 1, 2, 3, 4, 5; 
+            this.gesture = this.gestures[promptGesture];
+        }
+        console.log("you played " + this.gesture);
+        }
  
 
     

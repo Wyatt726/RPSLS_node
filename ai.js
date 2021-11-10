@@ -8,6 +8,7 @@ class AI extends Player{
     pickGesture(){
         let randomPic = Math.floor(Math.random() * this.gestures.length)
         this.gesture = this.gestures[randomPic]
+        console.log("Computer plays " + this.gesture)
     }
 }
 
