@@ -1,5 +1,7 @@
 "use strict"
 
+// const {Human} = require("./human")
+
 // const gesture = require('./gesture');
 
 class Player {

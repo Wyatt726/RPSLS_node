@@ -3,6 +3,9 @@
 const {Human} = require('./human')
 const {AI} = require('./ai')
 const prompt = require("prompt-sync")();
+const {Player} = require("./player");
+const human = require('./human');
+const ai = require('./ai');
 
 class Game {
     constructor() {
@@ -34,9 +37,36 @@ class Game {
                 howManyPlayers; 
             }
         }
+
+    chooseGesture () { 
+        // create the funciton for a human to pick a getsture
+        let playerOneChoice;
+        let promptGesture = parseInt(prompt("Your turn, pick a gesture!: \nPress 1 for Rock.  \nPress 2 for Paper.  \nPress 3 for Scissors.  \nPress 4 for Lizard.  \nPress 5 for Spock. " ));
+            if (isNaN(promptGesture)) {
+                console.log("Not a number.  Enter relevant number");
+                chooseGesture();
+            }
+            else {
+                promptGesture == 1, 2, 3, 4, 5; 
+                playerOneChoice = promptGesture;
+            }
+            console.log(playerOneChoice + " test");
+            }
+
+    gameLogic ();
+            if (playerOneChoice == 1) {
+                
+            }
+            
+
+
     runGame(){
         this.displayRules();
         this.howManyPlayers();
+        this.chooseGesture();
+        
+        
+
     }
 }
 
