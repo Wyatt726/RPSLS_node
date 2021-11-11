@@ -37,49 +37,71 @@ class Game {
                 howManyPlayers; 
             }
         }
-
+        // if (this.playerOne.points == 2 || this.playerTwo.points == 2) {
+        //     console.log("GAME OVER!");
+        //     process.exit();
+        //     }
+    // let gameCounter;
+    
     playRound(){
-        //while player one less than 2 OR player 2 points less than 2
-        if (this.playerOne.wins < 2 || this.playerTwo.wins < 2){
-            this.playRound()
-        }else{
-            console.log("GAME OVER!");
-            process.exit()
-        }
-
-    this.playerOne.pickGesture()
-    this.playerTwo.pickGesture()
+        while (this.playerOne.points < 2 && this.playerTwo.points < 2){
+        this.playerOne.pickGesture()
+        // console.log("Your turn, pick a gesture!:");
+        this.playerTwo.pickGesture()
     // console.log("TEST for player 1 " + this.playerOne.gesture)
-    if(this.playerOne.gesture === this.playerTwo.gesture){
-        console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Its a tie, play again.")
-        this.playRound()
-    }
-    else if(this.playerOne.gesture == "Rock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Lizard")){
-        console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Player one wins this round.")    
-        this.playerOne.points += 1
-        console.log("Player two has " + this.playerOne.points + " wins");
-        this.playRound()
-    }
-    else {
-        console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Player two wins this round.")
-        this.playerTwo.points += 1
-        console.log("Player two has " + this.playerTwo.points + " wins");
-    }
-    }
+        if(this.playerOne.gesture === this.playerTwo.gesture){
+            console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Its a tie, play again.")
+        }
+        else if(this.playerOne.gesture == "Rock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Lizard")){
+        this.playerOneWins()
+        }
+        else if(this.playerOne.gesture == "Paper" && (this.playerTwo.gesture == "Rock" || this.playerTwo.gesture == "Spock")){
+        this.playerOneWins()    
+        }
+        else if(this.playerOne.gesture == "Scissors" && (this.playerTwo.gesture == "Paper" || this.playerTwo.gesture == "Lizard")){
+        this.playerOneWins()    
+        }
+        else if(this.playerOne.gesture == "Lizard" && (this.playerTwo.gesture == "Spock" || this.playerTwo.gesture == "Paper")){
+        this.playerOneWins()    
+        }
+        else if(this.playerOne.gesture == "Spock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Rock")){
+        this.playerOneWins()    
+        }        
+        else {
+            console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Player two wins this round.")
+            this.playerTwo.points += 1;
+            console.log("Player two has " + this.playerTwo.points + " wins");
+        }
+    }   
+}
+// if statement looking at points to determine the winner
+nameWinner(){
+
+}
+
+playerOneWins(){
+    console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Player one wins this round.")    
+    this.playerOne.points += 1;
+    console.log("Player one has " + this.playerOne.points + " wins and Player two has " + this.playerTwo.points + " wins");
+}
+    //     }
+
+
 
 
     runGame(){
-        this.displayRules();
-        this.howManyPlayers();
-        this.playRound();
-        // do while loop in play round function or think of how to make and end game funcion below.
-        // make a funcion that checks each players score, if both players have less than 2 poins call playRound to play another hand
-        // if a player has 2 points they are the winner.
-        
-        
-
+        this.displayRules()
+        this.howManyPlayers()
+        this.playRound()
+        this.nameWinner()
     }
 }
+        // do while loop in play round function or think of how to make and end game funcion below.
+        // make a funcion that checks each players score, if both players have less than 2 poins call playRound to play another hand
+        // if a player has 2 points they are the winner.     
+
+    
+
 
 // create rules 
 // display rules when program is started
@@ -100,20 +122,6 @@ class Game {
 
 
 //create walkthru function of displayRules prompting user to enter above info?
-
-
-
-            
-
-
-        
-
-
-
-
-
-// module.exports.gameRoom = gameRoom;
-// module.exports.displayRules = displayRules;
 module.exports = {
     Game:Game
 }
