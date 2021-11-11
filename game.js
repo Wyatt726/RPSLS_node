@@ -45,33 +45,32 @@ class Game {
     
     playRound(){
         while (this.playerOne.points < 2 && this.playerTwo.points < 2){
-        this.playerOne.pickGesture()
-        // console.log("Your turn, pick a gesture!:");
+            this.playerOne.pickGesture()
+
         this.playerTwo.pickGesture()
-    // console.log("TEST for player 1 " + this.playerOne.gesture)
-        if(this.playerOne.gesture === this.playerTwo.gesture){
-            console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Its a tie, play again.")
-        }
-        else if(this.playerOne.gesture == "Rock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Lizard")){
-        this.playerOneWins()
-        }
-        else if(this.playerOne.gesture == "Paper" && (this.playerTwo.gesture == "Rock" || this.playerTwo.gesture == "Spock")){
-        this.playerOneWins()    
-        }
-        else if(this.playerOne.gesture == "Scissors" && (this.playerTwo.gesture == "Paper" || this.playerTwo.gesture == "Lizard")){
-        this.playerOneWins()    
-        }
-        else if(this.playerOne.gesture == "Lizard" && (this.playerTwo.gesture == "Spock" || this.playerTwo.gesture == "Paper")){
-        this.playerOneWins()    
-        }
-        else if(this.playerOne.gesture == "Spock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Rock")){
-        this.playerOneWins()    
-        }        
-        else {
-            console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Player two wins this round.")
-            this.playerTwo.points += 1;
-            console.log("Player two has " + this.playerTwo.points + " wins");
-        }
+            if(this.playerOne.gesture === this.playerTwo.gesture){
+                console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Its a tie, play again.")
+            }
+            else if(this.playerOne.gesture == "Rock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Lizard")){
+            this.playerOneWins()
+            }
+            else if(this.playerOne.gesture == "Paper" && (this.playerTwo.gesture == "Rock" || this.playerTwo.gesture == "Spock")){
+            this.playerOneWins()    
+            }
+            else if(this.playerOne.gesture == "Scissors" && (this.playerTwo.gesture == "Paper" || this.playerTwo.gesture == "Lizard")){
+            this.playerOneWins()    
+            }
+            else if(this.playerOne.gesture == "Lizard" && (this.playerTwo.gesture == "Spock" || this.playerTwo.gesture == "Paper")){
+            this.playerOneWins()    
+            }
+            else if(this.playerOne.gesture == "Spock" && (this.playerTwo.gesture == "Scissors" || this.playerTwo.gesture == "Rock")){
+            this.playerOneWins()    
+            }        
+            else {
+                console.log(this.playerOne.name + " has chosen " + this.playerOne.gesture + " And " + this.playerTwo.name + " has chosen " + this.playerTwo.gesture + ". Player two wins this round.")
+                this.playerTwo.points += 1;
+                console.log("Player two has " + this.playerTwo.points + " wins");
+            }
     }   
 }
 // if statement looking at points to determine the winner
@@ -84,7 +83,7 @@ playerOneWins(){
     this.playerOne.points += 1;
     console.log("Player one has " + this.playerOne.points + " wins and Player two has " + this.playerTwo.points + " wins");
 }
-    //     }
+  
 
 
 
