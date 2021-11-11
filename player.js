@@ -1,8 +1,5 @@
 "use strict"
 
-// const {Human} = require("./human")
-
-// const gesture = require('./gesture');
 
 class Player {
     constructor(name) {
@@ -14,5 +11,5 @@ class Player {
     }
 }
 
-// exports example
+
 module.exports.Player = Player; 

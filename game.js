@@ -37,11 +37,7 @@ class Game {
                 howManyPlayers; 
             }
         }
-        // if (this.playerOne.points == 2 || this.playerTwo.points == 2) {
-        //     console.log("GAME OVER!");
-        //     process.exit();
-        //     }
-    // let gameCounter;
+
     
     playRound(){
         while (this.playerOne.points < 2 && this.playerTwo.points < 2){
@@ -73,7 +69,7 @@ class Game {
             }
     }   
 }
-// if statement looking at points to determine the winner
+
 nameWinner(){
     if (this.playerOne.points == 2) {
         console.log("Player One Wins!")
@@ -90,9 +86,6 @@ playerOneWins(){
 }
   
 
-
-
-
     runGame(){
         this.displayRules()
         this.howManyPlayers()
@@ -100,32 +93,9 @@ playerOneWins(){
         this.nameWinner()
     }
 }
-        // do while loop in play round function or think of how to make and end game funcion below.
-        // make a funcion that checks each players score, if both players have less than 2 poins call playRound to play another hand
-        // if a player has 2 points they are the winner.     
-
-    
-
-
-// create rules 
-// display rules when program is started
-// prompt player (1 player / 2 player )
-    // if 1 player (game is Player 1 vs computer)
-// prompt player (start game?  y/n)
-// If no, return to something.. beginning of code
-// if yes, prompt player to pick gesture (RPSLS)
-// run computer random gesture function 
-    // compare player and computer gestures 
-    // display winner
-    // display series w/l counter
-    // repeat player 1 gesture prompt until best 
-        // 2/3 satisfied. 
 
 
 
-
-
-//create walkthru function of displayRules prompting user to enter above info?
 module.exports = {
     Game:Game
 }
