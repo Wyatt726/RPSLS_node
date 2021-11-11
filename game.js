@@ -75,7 +75,12 @@ class Game {
 }
 // if statement looking at points to determine the winner
 nameWinner(){
-
+    if (this.playerOne.points == 2) {
+        console.log("Player One Wins!")
+    }   
+    else if (this.playerTwo.points == 2) {
+        console.log("Player Two Wins!")
+    }
 }
 
 playerOneWins(){
