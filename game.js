@@ -57,6 +57,8 @@ class Game {
     //         console.log("You chose " + playerOneChoice);
     //         console.log("Computer chose " + computerChoice);
     //         }
+
+    
     playRound(){
     this.playerOne.pickGesture()
     this.playerTwo.pickGesture()
